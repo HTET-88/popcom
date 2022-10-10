@@ -1,0 +1,4 @@
+bg color 
+=> background color >    background-color: #201E20; 
+=>Titile color > color: #ef1123; *red*
+=>Titile color > color: #FEE715FF; *yellow*
