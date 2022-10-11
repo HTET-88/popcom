@@ -153,7 +153,7 @@
         </div>
         <!-- END HERO SLIDE -->
     </div>
-    <!-- END HERO SECTION -->
+    <!-- END nav & first SECTION -->
 
     <!-- Action MOVIES SECTION -->
     <div class="section"  data-aos="fade-up" data-aos-duration="1000">
@@ -222,7 +222,7 @@
                 <!-- END MOVIE ITEM -->
             </div>
             <div class="seemore">
-                <button class="glow-on-hover" type="button">SEE MORE, THEN CLICK ME!</button>
+                <button class="glow-on-hover" type="button">SEE MORE</button>
             </div>
         </div>
     </div>
@@ -294,9 +294,9 @@
                 </a>
                 <!-- END MOVIE ITEM -->
             </div>
-        </div>
-        <div class="seemore">
-            <button class="glow-on-hover" type="button">SEE MORE, THEN CLICK ME!</button>
+            <div class="seemore">
+                <button class="glow-on-hover" type="button">SEE MORE</button>
+            </div>
         </div>
     </div>
     <!-- END Animation SECTION -->
@@ -368,9 +368,9 @@
                 </a>
                 <!-- END MOVIE ITEM -->
             </div>
-        </div>
-        <div class="seemore">
-            <button class="glow-on-hover" type="button">SEE MORE, THEN CLICK ME!</button>
+            <div class="seemore">
+                <button class="glow-on-hover" type="button">SEE MORE</button>
+            </div>
         </div>
     </div>
     <!-- END LATEST CARTOONS SECTION -->
@@ -412,23 +412,6 @@
                     </div>
                 </div>
                 
-                <!-- <div class="container">
-                    <div class="row">
-                            <div class="footer-widget-main">
-                                <div class="footer-logo">
-                                    <a href="index.html"><img src="./assets/images/mainlogo.png" class="img-fluid" alt="logo"></a>
-                                </div>
-                                <p>We are here to help you get full relax.</p>
-                                <div class="footer-social-icon">
-                                    <span>Follow us</span>
-                                    <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
-                                    <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
-                                    <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
             <div class="footer-content pt-5 pb-5">
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
