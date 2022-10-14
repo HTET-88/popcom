@@ -12,6 +12,7 @@
 <!-- owl carousel -->
 <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
 
+<link rel="stylesheet" href="action.css">
 <!-- custom style -->
 <link rel="stylesheet" href="/assets/css/ani.css">
 <link rel="stylesheet" href="assets/css/grid.css">

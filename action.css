@@ -1,0 +1,40 @@
+.action-movie-img{
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.action-movie-des{
+    margin: 10px;
+}
+
+.poster-box img{
+    width: 100px;
+    height: 70px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+    /* padding: 10px; */
+}
+
+.poster-box .watch-now-btn{
+    float: right;
+    margin-top: 10px;
+}
+
+.trailer-table table{
+    width: 100%;
+    /* border: 1px solid; */
+    margin-top: 20px;;
+}
+
+.trailer-table table td{
+    padding-left: 20px;
+}
+
+table .movie-des{
+    border: 1px solid;
+    padding: 10px;
+}
