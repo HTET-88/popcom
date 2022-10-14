@@ -36,11 +36,11 @@
     <!-- END NAV -->
 
     <!-- Desciption Section -->
-    <div class="section">
+    <div class="" >
         <div class="container">
             <div class="row">
                 <div class="action-movie-img col-6">
-                    <img src="./assets/images/action_row/Action_01.jpg" alt="" srcset="" class="">
+                    <img src="./assets/images/action_row/Action_01.jpg" alt="" srcset="" class="aa">
                 </div>
 
                 <div class=" col-6">
@@ -60,62 +60,68 @@
     <!-- End Description Section -->
 
     <!-- Poster Box Section -->
-    <div class="poster-box">
-        <a href="#"><img src="./assets/images/action_row/Action_02.jpeg" class="img-fluid"></a>
-        <a href="#"><img src="./assets/images/action_row/Action_03.jpeg" class="img-fluid"></a>
-        <a href="#"><img src="./assets/images/action_row/Action_04.jpeg" class="img-fluid"></a>
-        <a href="#"><img src="./assets/images/action_row/Action_05.jpeg" class="img-fluid"></a>
-        <a href="#" class="watch-now-btn">
-            <i class="bi bi-play-circle"></i>
-            <span>Watch now</span>
-        </a>
+    <div class="" >
+        <div class="container">
+            <div class="poster-box">
+                <a href="#"><img src="./assets/images/action_row/Action_02.jpeg" class="img-fluid"></a>
+                <a href="#"><img src="./assets/images/action_row/Action_03.jpeg" class="img-fluid"></a>
+                <a href="#"><img src="./assets/images/action_row/Action_04.jpeg" class="img-fluid"></a>
+                <a href="#"><img src="./assets/images/action_row/Action_05.jpeg" class="img-fluid"></a>
+                <a href="#" class="watch-now-btn">
+                    <i class="bi bi-play-circle"></i>
+                    <span>Watch now</span>
+                </a>
+            </div>
+        </div>
     </div>
     <!-- End Poster Box Section -->
 
     <!-- Video Section -->
-    <div class="container">
-        <div class="trailer-table">
-            <table>
-                <tr>
-                    <td>
-                        <table class="movie-des">
-                            <tr>
-                                <td>Casts - </td>
-                                <td>
-                                    <p>Lorem ipsum dolor sit amet consectetur 
-                                    adipisicing elit. Incidunt, aliquam?</p>
-                                </td>
-                            </tr>
+    <div class="section">
+        <div class="container">
+            <div class="trailer-table">
+                <table>
+                    <tr>
+                        <td>
+                            <table class="movie-des">
+                                <tr>
+                                    <td>Casts - </td>
+                                    <td>
+                                        <p>Lorem ipsum dolor sit amet consectetur 
+                                        adipisicing elit. Incidunt, aliquam?</p>
+                                    </td>
+                                </tr>
 
-                            <tr>
-                                <td>Directors - </td>
-                                <td>
-                                    Lorem ipsum, dolor sit amet consectetur 
-                                    adipisicing elit. Labore, dolorem.
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td>Directors - </td>
+                                    <td>
+                                        Lorem ipsum, dolor sit amet consectetur 
+                                        adipisicing elit. Labore, dolorem.
+                                    </td>
+                                </tr>
 
-                            <tr>
-                                <td>Awards - </td>
-                                <td>
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt, possimus. Dignissimos blanditiis consequuntur minus dolor dolorem, ducimus ipsa enim temporibus accusamus. Fugit illo voluptate cupiditate natus commodi, omnis animi reiciendis.
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td>Awards - </td>
+                                    <td>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt, possimus. Dignissimos blanditiis consequuntur minus dolor dolorem, ducimus ipsa enim temporibus accusamus. Fugit illo voluptate cupiditate natus commodi, omnis animi reiciendis.
+                                    </td>
+                                </tr>
 
-                            <tr>
-                                <td>Production- </td>
-                                <td>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit aut cupiditate molestias nostrum tempora eius quod error quibusdam eligendi unde!
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
+                                <tr>
+                                    <td>Production- </td>
+                                    <td>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit aut cupiditate molestias nostrum tempora eius quod error quibusdam eligendi unde!
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
 
-                    <td>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/t9QePUT-Yt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </td>
-                </tr>
-            </table>
+                        <td>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/t9QePUT-Yt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
     <!-- End Video Section -->

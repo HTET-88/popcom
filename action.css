@@ -1,10 +1,14 @@
 .action-movie-img{
     width: 100%;
-    height: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    /* height: 50%!important; */
+    /* height: 700px!important; */
+    /* margin: 0 auto !important; */
+    text-align: center;
+    image-rendering: pixelated;
 }
-
+.aa{
+    height: 100vh!important;
+}
 .action-movie-des{
     margin: 10px;
 }
