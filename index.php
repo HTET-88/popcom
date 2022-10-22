@@ -9,6 +9,10 @@
     <!-- Start style -->
         <?php include('includes/style.php') ?>
     <!-- End  -->
+    <!-- Start Custom Style -->
+    <link rel="stylesheet" href="assets/css/grid.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <!-- End custom style -->
 </head>
 <body>
 
@@ -481,6 +485,9 @@
     <!-- Start Script -->
         <?php include('includes/script.php') ?>
     <!-- End Script -->
+    <!-- Start Custom Script -->
+    <script src="assets/js/app.js"></script>
+    <!-- Start Custom Script -->
     <script>
         AOS.init();
     </script>
