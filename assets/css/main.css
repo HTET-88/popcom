@@ -12,7 +12,7 @@
 :root {
     --main-color: #FEE715FF;
     --hover-color: #ef1123;
-    --body-bg: #201E20;
+    --body-bg: #201e20;
     --text-color: #ffffff;
 
     --main-title-size : 24px;
@@ -41,24 +41,19 @@ body {
     background-color: var(--body-bg);
     color: var(--text-color);
 }
-
 a {
     text-decoration: none;
     color: unset;
 }
 /* End Core */
 /* fixed background */
-.banner-image {
-    /* background-image: url('assets/images/LOGO_COLLECTION/use.png'); */
+#blur_background{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    /* height: 100vh; */
-    /* Add the blur effect */
-    filter: blur(8px);
-    -webkit-filter: blur(10px);
-    z-index: 100;
+    /* filter: blur(8px); */
+    /* -webkit-filter: blur(10px); */
 }
 /* start nav bar */
 .navbar-nav li a{
@@ -66,12 +61,67 @@ a {
     font-weight: 700;
 }
 /* end nav bar  */
-/* content */
-.content {
-    background-color: rgba(0, 0, 0, 0.8);
+/* Start one  */
+/* #oneOverlay{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+} */
+#oneOverlay{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+.poster_image{
+    width: 50%;
     margin: 0 auto;
 }
-
-.detail_body{
-    background: rgba(0, 0, 0, 0)!important;
+.poster_image img{
+    opacity: 1;
+    filter: brightness(1);
 }
+.poster_info h3{
+    float: left;
+}
+hr {
+    border:none;
+    /* height: 20px; */
+    width: 100%;
+    /* height: 50px; */
+    margin-top: 0;
+    border-bottom: 1px solid #ffffff;
+    box-shadow: 0 20px 20px -20px rgb(255, 255, 255);
+    margin: -50px auto 10px; 
+}
+
+.info_tab_header{
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: "Mont";
+    font-weight: 600;
+}
+button.selected{
+    color:rgb(255, 255, 255);
+    background-color: #ef1123;
+}
+/* .tabs{
+    width: 100%;
+    box-shadow: 5px 5px 10px 5px #201e20;
+    overflow: hidden;
+}
+.tabs .tab-header{
+    float: left;
+    width: 30%;
+    border-right: 1px solid #ccc;
+    padding: 50px 0px;
+} */
+
+
+/* End one */
+/* content */
+
+
+

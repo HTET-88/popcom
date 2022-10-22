@@ -9,7 +9,9 @@
     <?php include('includes/style.php') ?>
     <!-- End Style -->
 </head>
-<body id="detail_body">
+<!-- fixed Background -->
+<body id="blur_background"  style="background-image:url('assets/images/bg_use_blur.png')">
+    <!-- Start Nav Bar -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-2">
       <div class="container">
         <!-- <a class="navbar-brand" href="#">Web Zone</a> -->
@@ -23,8 +25,7 @@
           data-bs-target="#navbarNav"
           aria-controls="navbarNav"
           aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+          aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -53,32 +54,70 @@
         </div>
       </div>
     </nav>
+    <!-- End Nav Bar  -->
 
-    <!-- whole section -->
-    <div class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center img-fluid" style="background-image:url('assets/images/bg_use.png');" ></div>
- 
-    
-    <!-- End whole section -->
+    <!--Start main Section / first -->
+    <div class="container col-bg text-center  w-100 vh-100 d-flex justify-content-center align-items-center" id="one">
+      <div id="oneOverlay" >
+        <div class="row ">
+          <div class="col p-5">
+            <div class="poster_image " >
+              <img src="assets/images/action_row/Action_02.jpeg" alt="" class="img-fluid">
+            </div>
+          </div>
+          <div class="col p-5">
+            <div class="poster_info " >
+              <h3>SKYSCRAPER</h3>
+              <hr>
+              <!-- tabs- -->
+              <div class="d-flex align-items-start">
+                <div class="nav flex-column  me-3"  role="tablist" aria-orientation="vertical">
+                  <button class="btn info_tab_header mb-1 text-light active nav-link"  data-bs-toggle="tab" data-bs-target="#synosis" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                    <i class="bi bi-bookmarks-fill"></i>
+                    SYNOSIS
+                  </button>
+                  <button class="btn info_tab_header mb-1 text-light nav-link" data-bs-toggle="tab" data-bs-target="#facts" type="button" role="tab" >
+                    Facts
+                  </button>
+                  <button class="btn info_tab_header mb-1 text-light nav-link" data-bs-toggle="tab" data-bs-target="#awards" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">
+                    Awards
+                  </button>
+                  <button class="btn info_tab_header mb-1 text-light nav-link"  data-bs-toggle="tab" data-bs-target="#casts" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                    Casts
+                  </button>
+                </div>
+                <div class="tab-content" id="v-pills-tabContent">
+                  <div class="tab-pane fade show active" id="synosis" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
+                    <h4>this is synosis</h4>
+                  </div>
+                  <div class="tab-pane fade" id="facts" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">
+                    <h4>This is Facts</h4>
+                  </div>
+                  <div class="tab-pane fade" id="awards" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabindex="0">
+                    <h4>This is Awards</h4>
+                  </div>
+                  <div class="tab-pane fade" id="casts" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabindex="0">
+                    <h4>This is casts</h4>
+                  </div>
+                </div>
+              </div>
+              <!-- end tabs -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Main Section / first -->
+
+   
+
+    <div class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center" >
+      <div class="content text-center">
+        <h1>This is content</h1>
+      </div>
+    </div>
     <!-- first section  -->
-    <section class="content text-center w-50 mb-5 mt-5 ">
-       <h1>this is content</h1>
-    </section>
-    <section class="content text-center w-50   mb-5 mt-5">
-       <h1>this is content</h1>
-       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore soluta fuga aut tenetur eaque blanditiis voluptate repudiandae impedit, quia dolor consectetur velit dicta cumque odit expedita? Soluta nisi hic vitae voluptas eveniet ex libero aspernatur labore aperiam laboriosam. Ipsam repellendus voluptate blanditiis possimus quis dolorem assumenda illo quisquam officia, neque totam vitae odio nobis necessitatibus dolore, reprehenderit voluptatum corrupti, earum atque alias! Perspiciatis saepe modi quas animi? Distinctio, dolorum eos placeat quia molestias cumque ducimus similique inventore suscipit minima, neque voluptas veniam nemo ut eveniet reprehenderit velit tenetur optio dolores incidunt, quis eaque recusandae ad. Necessitatibus nostrum cupiditate sit delectus.</p>
-    </section><section class="content text-center w-50   mb-5 mt-5">
-       <h1>this is content</h1>
-       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore soluta fuga aut tenetur eaque blanditiis voluptate repudiandae impedit, quia dolor consectetur velit dicta cumque odit expedita? Soluta nisi hic vitae voluptas eveniet ex libero aspernatur labore aperiam laboriosam. Ipsam repellendus voluptate blanditiis possimus quis dolorem assumenda illo quisquam officia, neque totam vitae odio nobis necessitatibus dolore, reprehenderit voluptatum corrupti, earum atque alias! Perspiciatis saepe modi quas animi? Distinctio, dolorum eos placeat quia molestias cumque ducimus similique inventore suscipit minima, neque voluptas veniam nemo ut eveniet reprehenderit velit tenetur optio dolores incidunt, quis eaque recusandae ad. Necessitatibus nostrum cupiditate sit delectus.</p>
-    </section><section class="content text-center w-50   mb-5 mt-5">
-       <h1>this is content</h1>
-       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore soluta fuga aut tenetur eaque blanditiis voluptate repudiandae impedit, quia dolor consectetur velit dicta cumque odit expedita? Soluta nisi hic vitae voluptas eveniet ex libero aspernatur labore aperiam laboriosam. Ipsam repellendus voluptate blanditiis possimus quis dolorem assumenda illo quisquam officia, neque totam vitae odio nobis necessitatibus dolore, reprehenderit voluptatum corrupti, earum atque alias! Perspiciatis saepe modi quas animi? Distinctio, dolorum eos placeat quia molestias cumque ducimus similique inventore suscipit minima, neque voluptas veniam nemo ut eveniet reprehenderit velit tenetur optio dolores incidunt, quis eaque recusandae ad. Necessitatibus nostrum cupiditate sit delectus.</p>
-    </section>
-    <!-- end first section -->
-
-
-
-
-
+    
     <!-- Start style -->
     <?php include('includes/script.php') ?>
     <!-- End Style -->

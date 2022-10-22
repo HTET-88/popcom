@@ -11,3 +11,9 @@ window.addEventListener('scroll', function () {
         nav.classList.remove('bg-dark', 'shadow');
     }
 });
+
+// button focus
+$('info_tab_header').on('click', function(){
+    // $('button').removeClass('selected');
+    $(this).addClass('selected');
+});
