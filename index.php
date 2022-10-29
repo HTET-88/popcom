@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    include ('includes/config.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -160,97 +164,51 @@
     </div>
     <!-- END nav & first SECTION -->
 
+    <?php
+		$query = "SELECT * FROM movie_info";
+    ?>
     <!-- Action MOVIES SECTION -->
     <div class="section"  data-aos="fade-up" data-aos-duration="1000">
         <div class="container">
             <div class="section-header" >
-                <div class="category">
-                    <h3>Action Movies</h3>
+                <span>New Release</span>
+                <div class="category"  style="margin-top: 10px;">
+                    <h3>Movies</h3>
                 </div>
             </div>
             <div class="movies-slide carousel-nav-center owl-carousel">
+            <?php
+				$do = mysqli_query($conn,$query);
+
+				if($do){
+					while ($row = mysqli_fetch_array($do))
+					{ 
+						$id = $row['movieID'];
+						// $skum = $row['SKUMaster'];
+				    ?>
                 <!-- MOVIE ITEM -->
                 <div>
                     <a href="#" class="movie-item">
-                        <img src="./assets/images/action_row/Action_01.jpg" alt="">
+                        <img src="./assets/images/action_row/<?php echo $row['moviePoster']; ?>" alt="">
                         <div class="movie_title">
-                            <button class="btn " onclick="location.href='movie_details.php';">VIEW</button>
+                            <button class="btn " onclick="location.href='movie_details.php?movieID=<?= $id ?>';">VIEW</button>
                         </div>
                     </a>
                     <div class="movie_body ">
-                        <h4 class="movie-name ">SKYSCRAPER</h4>
+                        <h4 class="movie-name "><?php echo $row['movieName']; ?></h4>
                         <p class="card-text">
                             <i class="bi bi-star-fill"></i> 
                             <i class="bi bi-star-fill"></i> 
                             <i class="bi bi-star-fill"></i> 
                             <i class="bi bi-star-fill"></i>      
                             <i class="bi bi-star-half"></i> 
-                            <span class="mx-2">8.7/10 </span>
+                            <span class="mx-2"><?php echo $row['movieRating']; ?>/10 </span>
                         </p> 
                     </div>
                 </div>
-                <!-- END MOVIE ITEM -->
-                <!-- MOVIE ITEM -->
-                <div>
-                    <a href="#" class="movie-item">
-                        <img src="./assets/images/action_row/Action_01.jpg" alt="">
-                        <div class="movie_title">
-                            <button class="btn " onclick="location.href='movie_details.php';">VIEW</button>
-                        </div>
-                    </a>
-                    <div class="movie_body ">
-                        <h4 class="movie-name ">SKYSCRAPER</h4>
-                        <p class="card-text">
-                            <i class="bi bi-star-fill"></i> 
-                            <i class="bi bi-star-fill"></i> 
-                            <i class="bi bi-star-fill"></i> 
-                            <i class="bi bi-star-fill"></i>      
-                            <i class="bi bi-star-half"></i> 
-                            <span class="mx-2">8.7/10 </span>
-                        </p> 
-                    </div>
-                </div>
-                <!-- END MOVIE ITEM -->
-                <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item">
-                    <img src="./assets/images/action_row/Action_03.jpeg" alt="">
-                    <div class="movie_title">
-                        <h1>Sample Text</h1>
-                    </div>
-                </a>
-                <!-- END MOVIE ITEM -->
-                <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item">
-                    <img src="./assets/images/action_row/Action_08.jpeg" alt="">
-                    <div class="movie_title">
-                        <h1>Sample Text</h1>
-                    </div>
-                </a>
-                <!-- END MOVIE ITEM -->
-                <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item">
-                    <img src="./assets/images/action_row/Action_05.jpeg" alt="">
-                    <div class="movie_title">
-                        <h1>Sample Text</h1>
-                    </div>
-                </a>
-                <!-- END MOVIE ITEM -->
-                <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item">
-                    <img src="./assets/images/action_row/Action_06.jpeg" alt="">
-                    <div class="movie_title">
-                        <h1>Sample Text</h1>
-                    </div>
-                </a>
-                <!-- END MOVIE ITEM -->
-                <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item">
-                    <img src="./assets/images/action_row/Action_07.jpeg" alt="">
-                    <div class="movie_title">
-                        <h1>Sample Text</h1>
-                    </div>
-                </a>
-                <!-- END MOVIE ITEM -->
+                <?php }
+				}
+			?>
             </div>
             <div class="seemore">
                 <button class="glow-on-hover" type="button">SEE MORE</button>
@@ -263,17 +221,18 @@
     <div class="section"  data-aos="fade-up" data-aos-duration="1000">
         <div class="container">
             <div class="section-header">
-                <div class="category">
-                    <h3 >Animation</h3>
+                <span>Ongoing</span>
+                <div class="category"  style="margin-top: 10px;">
+                    <h3 >Series</h3>
                 </div>
             </div>
             <div class="movies-slide carousel-nav-center owl-carousel">
                 <!-- MOVIE ITEM -->
                 <div>
                     <a href="#" class="movie-item">
-                        <img src="./assets/images/action_row/Action_01.jpg" alt="">
+                        <img src="./assets/images/action_row/m_00008.jpeg" alt="">
                         <div class="movie_title">
-                            <button class="btn " onclick="location.href='movie_details.php';">VIEW</button>
+                            <button class="btn " onclick="location.href='#';">Still Developing</button>
                         </div>
                     </a>
                     <div class="movie_body ">
@@ -292,9 +251,9 @@
                 <!-- MOVIE ITEM -->
                 <div>
                     <a href="#" class="movie-item">
-                        <img src="./assets/images/action_row/Action_01.jpg" alt="">
+                        <img src="./assets/images/action_row/m_00010.jpeg" alt="">
                         <div class="movie_title">
-                            <button class="btn " onclick="location.href='movie_details.php';">VIEW</button>
+                            <button class="btn " onclick="location.href='#';">Still Developing</button>
                         </div>
                     </a>
                     <div class="movie_body ">
@@ -311,44 +270,109 @@
                 </div>
                 <!-- END MOVIE ITEM -->
                 <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item">
-                    <img src="./assets/images/action_row/Action_03.jpeg" alt="">
-                    <div class="movie_title">
-                        <h1>Sample Text</h1>
+                <div>
+                    <a href="#" class="movie-item">
+                        <img src="./assets/images/action_row/m_00009.jpeg" alt="">
+                        <div class="movie_title">
+                            <button class="btn " onclick="location.href='#';">Still Developing</button>
+                        </div>
+                    </a>
+                    <div class="movie_body ">
+                        <h4 class="movie-name ">SKYSCRAPER</h4>
+                        <p class="card-text">
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i>      
+                            <i class="bi bi-star-half"></i> 
+                            <span class="mx-2">8.7/10 </span>
+                        </p> 
                     </div>
-                </a>
+                </div>
                 <!-- END MOVIE ITEM -->
                 <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item">
-                    <img src="./assets/images/action_row/Action_08.jpeg" alt="">
-                    <div class="movie_title">
-                        <h1>Sample Text</h1>
+                <div>
+                    <a href="#" class="movie-item">
+                        <img src="./assets/images/action_row/m_00007.jpeg" alt="">
+                        <div class="movie_title">
+                            <button class="btn " onclick="location.href='#';">Still Developing</button>
+                        </div>
+                    </a>
+                    <div class="movie_body ">
+                        <h4 class="movie-name ">SKYSCRAPER</h4>
+                        <p class="card-text">
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i>      
+                            <i class="bi bi-star-half"></i> 
+                            <span class="mx-2">8.7/10 </span>
+                        </p> 
                     </div>
-                </a>
+                </div>
                 <!-- END MOVIE ITEM -->
                 <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item">
-                    <img src="./assets/images/action_row/Action_05.jpeg" alt="">
-                    <div class="movie_title">
-                        <h1>Sample Text</h1>
+                <div>
+                    <a href="#" class="movie-item">
+                        <img src="./assets/images/action_row/m_00006.jpeg" alt="">
+                        <div class="movie_title">
+                            <button class="btn " onclick="location.href='#';">Still Developing</button>
+                        </div>
+                    </a>
+                    <div class="movie_body ">
+                        <h4 class="movie-name ">SKYSCRAPER</h4>
+                        <p class="card-text">
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i>      
+                            <i class="bi bi-star-half"></i> 
+                            <span class="mx-2">8.7/10 </span>
+                        </p> 
                     </div>
-                </a>
+                </div>
                 <!-- END MOVIE ITEM -->
                 <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item">
-                    <img src="./assets/images/action_row/Action_06.jpeg" alt="">
-                    <div class="movie_title">
-                        <h1>Sample Text</h1>
+                <div>
+                    <a href="#" class="movie-item">
+                        <img src="./assets/images/action_row/m_00001.jpg" alt="">
+                        <div class="movie_title">
+                            <button class="btn " onclick="location.href='#';">Still Developing</button>
+                        </div>
+                    </a>
+                    <div class="movie_body ">
+                        <h4 class="movie-name ">SKYSCRAPER</h4>
+                        <p class="card-text">
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i>      
+                            <i class="bi bi-star-half"></i> 
+                            <span class="mx-2">8.7/10 </span>
+                        </p> 
                     </div>
-                </a>
+                </div>
                 <!-- END MOVIE ITEM -->
                 <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item">
-                    <img src="./assets/images/action_row/Action_07.jpeg" alt="">
-                    <div class="movie_title">
-                        <h1>Sample Text</h1>
+                <div>
+                    <a href="#" class="movie-item">
+                        <img src="./assets/images/action_row/m_00005.jpeg" alt="">
+                        <div class="movie_title">
+                            <button class="btn " onclick="location.href='#';">Still Developing</button>
+                        </div>
+                    </a>
+                    <div class="movie_body ">
+                        <h4 class="movie-name ">SKYSCRAPER</h4>
+                        <p class="card-text">
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i>      
+                            <i class="bi bi-star-half"></i> 
+                            <span class="mx-2">8.7/10 </span>
+                        </p> 
                     </div>
-                </a>
+                </div>
                 <!-- END MOVIE ITEM -->
             </div>
             <div class="seemore">
@@ -362,18 +386,18 @@
     <div class="section"  data-aos="fade-in" data-aos-duration="1000">
         <div class="container">
             <div class="section-header">
-                <span>Ongoing</span>
+                <span> Completed </span>
                 <div class="category" style="margin-top: 10px;">
-                    <h3 >International Series </h3>
+                    <h3 > Trendy Movies & Series </h3>
                 </div>
             </div>
             <div class="movies-slide carousel-nav-center owl-carousel">
                 <!-- MOVIE ITEM -->
                 <div>
                     <a href="#" class="movie-item">
-                        <img src="./assets/images/action_row/Action_01.jpg" alt="">
+                        <img src="./assets/images/action_row/m_00006.jpeg" alt="">
                         <div class="movie_title">
-                            <button class="btn " onclick="location.href='movie_details.php';">VIEW</button>
+                            <button class="btn " onclick="location.href='#';">Still Developing</button>
                         </div>
                     </a>
                     <div class="movie_body ">
@@ -390,55 +414,133 @@
                 </div>
                 <!-- END MOVIE ITEM -->
                 <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item">
-                    <img src="./assets/images/action_row/Action_02.jpeg" alt="">
-                    <div class="movie_title">
-                        <button class="btn" onclick="location.href='https://google.com';">VIEW</button>
+                <div>
+                    <a href="#" class="movie-item">
+                        <img src="./assets/images/action_row/m_00002.jpeg" alt="">
+                        <div class="movie_title">
+                            <button class="btn " onclick="location.href='#';">Still Developing</button>
+                        </div>
+                    </a>
+                    <div class="movie_body ">
+                        <h4 class="movie-name ">SKYSCRAPER</h4>
+                        <p class="card-text">
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i>      
+                            <i class="bi bi-star-half"></i> 
+                            <span class="mx-2">8.7/10 </span>
+                        </p> 
                     </div>
-                </a>
+                </div>
                 <!-- END MOVIE ITEM -->
                 <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item">
-                    <img src="./assets/images/action_row/Action_03.jpeg" alt="">
-                    <div class="movie_title">
-                        <h1>Sample Text</h1>
+                <div>
+                    <a href="#" class="movie-item">
+                        <img src="./assets/images/action_row/m_00003.jpeg" alt="">
+                        <div class="movie_title">
+                            <button class="btn " onclick="location.href='#';">Still Developing</button>
+                        </div>
+                    </a>
+                    <div class="movie_body ">
+                        <h4 class="movie-name ">SKYSCRAPER</h4>
+                        <p class="card-text">
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i>      
+                            <i class="bi bi-star-half"></i> 
+                            <span class="mx-2">8.7/10 </span>
+                        </p> 
                     </div>
-                </a>
+                </div>
                 <!-- END MOVIE ITEM -->
                 <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item">
-                    <img src="./assets/images/action_row/Action_08.jpeg" alt="">
-                    <div class="movie_title">
-                        <h1>Sample Text</h1>
+                <div>
+                    <a href="#" class="movie-item">
+                        <img src="./assets/images/action_row/m_00010.jpeg" alt="">
+                        <div class="movie_title">
+                            <button class="btn " onclick="location.href='#';">Still Developing</button>
+                        </div>
+                    </a>
+                    <div class="movie_body ">
+                        <h4 class="movie-name ">SKYSCRAPER</h4>
+                        <p class="card-text">
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i>      
+                            <i class="bi bi-star-half"></i> 
+                            <span class="mx-2">8.7/10 </span>
+                        </p> 
                     </div>
-                </a>
+                </div>
                 <!-- END MOVIE ITEM -->
                 <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item">
-                    <img src="./assets/images/action_row/Action_05.jpeg" alt="">
-                    <div class="movie_title">
-                        <h1>Sample Text</h1>
+                <div>
+                    <a href="#" class="movie-item">
+                        <img src="./assets/images/action_row/m_00009.jpeg" alt="">
+                        <div class="movie_title">
+                            <button class="btn " onclick="location.href='#';">Still Developing</button>
+                        </div>
+                    </a>
+                    <div class="movie_body ">
+                        <h4 class="movie-name ">SKYSCRAPER</h4>
+                        <p class="card-text">
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i>      
+                            <i class="bi bi-star-half"></i> 
+                            <span class="mx-2">8.7/10 </span>
+                        </p> 
                     </div>
-                </a>
+                </div>
                 <!-- END MOVIE ITEM -->
                 <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item">
-                    <img src="./assets/images/action_row/Action_06.jpeg" alt="">
-                    <div class="movie_title">
-                        <h1>Sample Text</h1>
+                <div>
+                    <a href="#" class="movie-item">
+                        <img src="./assets/images/action_row/m_00001.jpg" alt="">
+                        <div class="movie_title">
+                            <button class="btn " onclick="location.href='#';">Still Developing</button>
+                        </div>
+                    </a>
+                    <div class="movie_body ">
+                        <h4 class="movie-name ">SKYSCRAPER</h4>
+                        <p class="card-text">
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i>      
+                            <i class="bi bi-star-half"></i> 
+                            <span class="mx-2">8.7/10 </span>
+                        </p> 
                     </div>
-                </a>
+                </div>
                 <!-- END MOVIE ITEM -->
                 <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item">
-                    <img src="./assets/images/action_row/Action_07.jpeg" alt="">
-                    <div class="movie_title">
-                        <h1>Sample Text</h1>
+                <div>
+                    <a href="#" class="movie-item">
+                        <img src="./assets/images/action_row/m_00005.jpg" alt="">
+                        <div class="movie_title">
+                            <button class="btn " onclick="location.href='#';">Still Developing</button>
+                        </div>
+                    </a>
+                    <div class="movie_body ">
+                        <h4 class="movie-name ">SKYSCRAPER</h4>
+                        <p class="card-text">
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i>      
+                            <i class="bi bi-star-half"></i> 
+                            <span class="mx-2">8.7/10 </span>
+                        </p> 
                     </div>
-                </a>
+                </div>
                 <!-- END MOVIE ITEM -->
             </div>
-            <div class="seemore">
+            <div class="seemore ">
                 <button class="glow-on-hover" type="button">SEE MORE</button>
             </div>
         </div>
@@ -466,17 +568,17 @@
         <div class="container">
                 <div class="row">
                     <div class="col-md-3 info " >
-                                <i class="fas fa-map-marker-alt"></i>
-                                <h4 class="text-light">What's up :</h4>
+                                <i class="bi bi-whatsapp"></i>
+                                <h4 class="text-light">whatsapp </h4>
                                 <p> +95 9364895978</p>
                     </div>
                     <div class="col-md-3 info">
-                                <i class="fas fa-phone"></i>
+                                <i class="bi bi-telephone-fill"></i>
                                 <h4  class="text-light">Contact No.</h4>
                                 <p>+95 9898967630</p>
                     </div>
                     <div class="col-md-3 info">
-                                <i class="far fa-envelope-open"></i>
+                                <i class="bi bi-envelope-fill"></i>
                                 <h4  class="text-light">Mail us</h4>
                                 <p>popcom@icloud.com</p>
                     </div>
@@ -484,26 +586,21 @@
                 
             <div class="footer-content pt-5 pb-5">
                 <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                    <div class="col-xl-4 col-md-4 mb-30">
                         <div class="footer-widget">
                             <div class="footer-widget-heading">
                                 <h3>Useful Links</h3>
                             </div>
-                            <ul>
+                            <ul style="display: flex;">
                                 <li><a href="#">Home</a></li>
                                 <li><a href="#">about</a></li>
                                 <li><a href="#">services</a></li>
                                 <li><a href="#">portfolio</a></li>
                                 <li><a href="#">Contact</a></li>
-                                <li><a href="#">About us</a></li>
-                                <li><a href="#">Our Services</a></li>
-                                <li><a href="#">Expert Team</a></li>
-                                <li><a href="#">Contact us</a></li>
-                                <li><a href="#">Latest News</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                    <div class="col-xl-4  col-md-4 mb-50">
                         <div class="footer-widget">
                             <div class="footer-widget-heading">
                                 <h3>Subscribe</h3>
@@ -514,9 +611,26 @@
                             <div class="subscribe-form">
                                 <form action="#">
                                     <input type="text" placeholder="Email Address">
-                                    <button><i class="fab fa-telegram-plane"></i></button>
+                                    <button><i class="bi bi-send-fill"></i></i></button>
                                 </form>
                             </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-50">
+                        <div class="footer-widget">
+                          <div class="footer-widget-heading">
+                            <h3>About POPcom</h3>
+                          </div>
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint a veniam earum, 
+                              corrupti ab reprehenderit hic. Doloribus optio, blanditiis maiores cupiditate 
+                              nisi quas facere corporis?</p>
+                          <ul class="footer-social" style="display: flex;"> 
+                              <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                              <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+                              <li><a href="#"><i class="bi bi-whatsapp"></i></a></li>
+                              <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+                              <li><a href="#"><i class="bi bi-youtube"></i></a></li>
+                          </ul>
                         </div>
                     </div>
                 </div>
@@ -528,18 +642,6 @@
                     <div class="col-xl-6 col-lg-6 text-center text-lg-left">
                         <div class="copyright-text">
                             <p>Copyright &copy; 2022, All Right Reserved <a href="#"><span>POP</span>com</a></p>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
-                        <div class="footer-menu">
-                            <ul>
-                                <li><a href="#">HOME</a></li>
-                                <li><a href="#">Actions</a></li>
-                                <li><a href="#">Animation</a></li>
-                                <li><a href="#">International Series</a></li>
-                                <li><a href="#">Instructions</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
                         </div>
                     </div>
                 </div>

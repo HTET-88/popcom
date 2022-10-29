@@ -29,6 +29,8 @@ function toggleText() {
     var showMoreText =document.getElementById("moreText");
     //read more button
     var buttonText =document.getElementById("textButton");
+    //two related section
+    // var two = document.getElementById("#two");
     if (points.style.display === "none") {
         showMoreText.style.display = "none";
         points.style.display = "inline";
@@ -38,7 +40,8 @@ function toggleText() {
 
         showMoreText.style.display = "inline";
         points.style.display = "none";
-        buttonText.innerHTML = "Show Less";
+        buttonText.innerHTML = "Read Less";
+        // two.style.marginTop = "2000px";
     }
 }
 

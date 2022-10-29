@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    include ('includes/config.php');
+    $id = $_GET['movieID'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +38,7 @@
           <div class="mx-auto"></div>
             <ul class="navbar-nav navbar-nav-dark">
               <li class="nav-item p-2 ">
-                <a class="nav-link " href="#">HOME</a>
+                <a class="nav-link " href="index.php">HOME</a>
               </li>
               <li class="nav-item p-2">
                 <a class="nav-link " href="#">MOVIE</a>
@@ -58,15 +64,23 @@
     <!--Start main Section / first -->
     <div class="container col-bg text-center  w-100 vh-100 d-flex  align-items-center mt-5" id="one ">
       <div id="oneOverlay" >
+      <?php
+          $query = "SELECT * FROM movie_info 
+          LEFT JOIN movie_link ON movie_info.movieCode=movie_link.movieCode
+          LEFT JOIN movie_casts ON movie_info.movieCode=movie_casts.movieCode
+          WHERE movieID=$id";
+          $do = mysqli_query($conn,$query);
+          $row = mysqli_fetch_array($do);
+      ?>
         <div class="row ">
           <div class="col-lg-4 p-5 coat_poster_image">
             <div class="poster_image  " >
-              <img src="assets/images/action_row/Action_02.jpeg" alt="" class="img-fluid">
+              <img src="assets/images/action_row/<?php echo $row['moviePoster']; ?>" alt="" class="img-fluid">
             </div>
           </div>
           <div class="col-lg-8 p-5  " >
             <div class="poster_info " >
-              <h3>TOPGUN : MAVERICK</h3>
+              <h3><?php echo $row['movieName']; ?></h3>
               <hr>
               <!-- tabs- -->
               <div class="d-flex ">
@@ -88,11 +102,13 @@
                     Casts
                   </button>
                 </div>
-                <div class="tab-content ">
+                <div class="tab-content col-10">
                   <div class="tab-pane fade show mb-3 mt-3 active info_tab_content" id="synosis" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
-                    <p>After more than 30 years of service as one of the Navy's top aviators, Pete "Maverick" Mitchell is where he belongs, pushing the envelope as a courageous test pilot and dodging the advancement in rank that would ground him.
+                      <p><?php echo $row['movieSynosisShowUp'] ?></p>
                       <span id="points" >...</span>
-                      <span id="moreText"> Training a detachment of graduates for a special assignment, Maverick must confront the ghosts of his past and his deepest fears, culminating in a mission that demands the ultimate sacrifice from those who choose to fly it.</span>
+                      <p id="moreText" > 
+                        <?php echo $row['movieSynosisHide'] ?>
+                      </p>
                     </p>
                     <button class="btn " onclick="toggleText()" id="textButton">
                       Read More
@@ -100,34 +116,30 @@
                   </div>
                   <div class="tab-pane fade mt-3" id="facts" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">
                     <div class="container text-center">
-                      <div class="row mb-3 shadow facts_info_coat" >
-                        <div class="col facts_info ">
-                          <i class="bi bi-check-circle "></i><h6>Director</h6>
-                          <span>Joseph Kosinski</span>
-                        </div>
-                        <div class="col facts_info ">
-                          <i class="bi bi-check-circle "></i><h6>Rating</h6>
-                          <span>8.4/10</span>
+                      <div class="row mb-3 shadow facts_info_coat " >
+                        <div class="col-md-12 facts_info mb-1 ">
+                          <h5>Director</h5>
+                          <span><?php echo $row['movieDirector'] ?></span>
                         </div>
                       </div>
                       <div class="row mb-3 shadow">
-                        <div class="col facts_info ">
-                          <i class="bi bi-check-circle "></i><h6>Genre</h6>
-                          <span>Action | Adventure | Drama</span>
+                        <div class="col facts_info mb-1">
+                          <i class="bi bi-check-circle "></i><h5>Genre</h5>
+                          <span><?php echo $row['movieGenre'] ?></span>
                         </div>
-                        <div class="col facts_info  ">
-                          <i class="bi bi-check-circle "></i><h6>Country</h6>
-                          <span>United States</span>
+                        <div class="col facts_info mb-1">
+                          <i class="bi bi-check-circle "></i><h5>Rating</h5>
+                          <span><?php echo $row['movieRating'] ?>/10</span>
                         </div>
                       </div>
                       <div class="row shadow">
-                        <div class="col facts_info">
-                          <i class="bi bi-check-circle "></i><h6>Release</h6>
-                          <span>2022</span>
+                        <div class="col facts_info mb-3">
+                          <i class="bi bi-check-circle "></i><h5>Release</h5>
+                          <span><?php echo $row['movieRelease'] ?></span>
                         </div>
-                        <div class="col facts_info">
-                          <i class="bi bi-check-circle "></i><h6>Duration</h6>
-                          <span>2 hrs and 11mins</span>
+                        <div class="col facts_info mb-3">
+                          <i class="bi bi-check-circle "></i><h5>Duration</h5>
+                          <span><?php echo $row['movieDuration'] ?></span>
                         </div>      
                       </div>
                     </div>
@@ -143,32 +155,23 @@
                     <h4 class="mb-3">Casts</h4>
                     <div class="container text-center align-items-center">
                       <div class="row">
-                        <div class="col-md-4 info_img ">
-                          <img src="assets/images/main_casts/tom_cruise.jpg" class="img-fluid rounded mb-1" alt="...">
-                          <p>Tom Cruise</p>
-                        </div>
-                        <div class="col-md-4 info_img">
-                          <img src="assets/images/main_casts/miles_teller.jfif" class="img-fluid rounded mb-1" alt="...">
-                          <p>Miles Teller</p>
-                        </div>
-                        <div class="col-md-4 info_img">
-                          <img src="assets/images/main_casts/val_kilmer.jfif" class="img-fluid rounded mb-1" alt="...">
-                          <p>Val Kilmer</p>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-4 info_img">
-                          <img src="assets/images/main_casts/glen_powell.jpg" class="img-fluid rounded mb-1" alt="...">
-                          <p>Glen Powell</p>
-                        </div>
-                        <div class="col-md-4 info_img">
-                          <img src="assets/images/main_casts/Jennifer_ connelly.jpg" class="img-fluid rounded mb-1" alt="...">
-                          <p>Jennifer Connelly</p>
-                        </div>
-                        <div class="col-md-4 info_img">
-                          <img src="assets/images/main_casts/jon_hamm.jpg" class="img-fluid rounded mb-1" alt="...">
-                          <p>Jon Hamm</p>
-                        </div>
+                      <?php
+                        $query1 = "SELECT * FROM movie_info 
+                        INNER JOIN movie_casts ON movie_info.movieCode=movie_casts.movieCode
+                        WHERE movieID=$id";
+                        $do1 = mysqli_query($conn,$query1);
+
+                        if($do1){
+                          while ($row1 = mysqli_fetch_array($do1))
+                          { 
+                            ?>
+                          <div class="col-md-4 info_img mb-3">
+                            <img src="assets/images/main_casts/<?php echo $row1['cast_img']  ?>" class="img-fluid rounded mb-1" alt="...">
+                            <p><?php echo $row1['cast']  ?></p>
+                          </div>
+                          <?php }
+                          }
+                      ?>
                       </div>
                     </div>
                   </div>
@@ -180,11 +183,36 @@
               <a href="" type="button" class="btn trailer_btn default_btn mt-3  p-2" onclick="toggle();"><i class="bi bi-play-btn"></i>Watch Trailer</a>
                 <div class="trailer">
                     <span class="close">&#10006;</span>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/t9QePUT-Yt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://youtube.com/embed/<?php echo $row['movieYTLink'] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div class="d-flex justify-content-center">
-                  <a class="btn default_small_btn mt-3 m-3  p-2"><i class="bi bi-play-circle"></i>1080 P</a>
-                  <a class="btn default_small_btn mt-3 m-3 p-2"><i class="bi bi-play-circle"></i>720 P</a>
+                  <?php
+                      if($row['movieLink_1080'] == null){
+                        ?>
+                        <a class="btn default_small_btn mt-3 m-3 p-2 disabled"><i class="bi bi-play-circle"></i>1080 P</a>
+                        <?php
+                      }
+                      else 
+                      {
+                        ?>
+                        <a class="btn default_small_btn mt-3 m-3 p-2 " target="_blank" href="<?php echo $row['movieLink_1080'] ?>"><i class="bi bi-play-circle"></i>1080 P</a>
+                        <?php
+                      }
+                  ?>
+                  <?php
+                      if($row['movieLink_720'] == null){
+                        ?>
+                        <a class="btn default_small_btn mt-3 m-3  p-2 disabled"><i class="bi bi-play-circle"></i>720 P</a>
+                        <?php
+                      }
+                      else 
+                      {
+                        ?>
+                        <a class="btn default_small_btn mt-3 m-3  p-2" target="_blank" href="<?php echo $row['movieLink_720'] ?>"><i class="bi bi-play-circle"></i>720 P</a>
+                        <?php
+                      }
+                  ?>
+                  
                 </div>
           </div>
           </div>
@@ -194,10 +222,10 @@
     <!-- End Main Section / first -->
 
     <!-- Youtube Popup -->
-    <div class="trailer hidden">
+    <!-- <div class="trailer hidden">
       <iframe id="playvideo" src="https://www.youtube.com/embed/OGb2Hkeu2BI" allowfullscreen  frameborder="0"></iframe>
         <span class="close">&times;</span>
-    </div>
+    </div> -->
     <!-- End youtube popup -->
 
     <!-- related moveis -->
@@ -209,9 +237,9 @@
       <div class="row d-flex justify-content-around  align-items-center" >
         <div class="col-sm-3 mb-5"  >
           <div class="card">
-            <img src="assets/images/action_row/Action_07.jpeg" class="card-img-top " alt="...">
+            <img src="assets/images/action_row/m_00007.jpeg" class="card-img-top " alt="...">
             <div class="card-body d-flex">
-              <div class="col">
+              <div class="col-sm-8">
                 <h6 class="card-title ">Red Notice</h6>
                 <p class="card-text">
                   <i class="bi bi-star-fill"></i> 
@@ -219,17 +247,17 @@
                   <i class="bi bi-star-half"></i>
                   <span class="mx-2">8.7/10 </span></p> 
               </div>
-              <!-- <div class="col card-btn-cup">
-                <a href="" class="btn btn-default ">View </a>
-              </div> -->
+              <div class="col-sm-4 card-btn-cup">
+                <a href="" class="btn btn-default  ">View </a>
+              </div>
             </div>
           </div>
         </div>
         <div class="col-sm-3 mb-5">
           <div class="card">
-            <img src="assets/images/action_row/Action_08.jpeg" class="card-img-top " alt="...">
+            <img src="assets/images/action_row/m_00008.jpeg" class="card-img-top " alt="...">
             <div class="card-body d-flex">
-              <div class="col">
+              <div class="col-sm-8">
                 <h6 class="card-title ">Free Guy</h6>
                 <p class="card-text">
                   <i class="bi bi-star-fill"></i> 
@@ -237,17 +265,17 @@
                   <i class="bi bi-star-half"></i>
                   <span class="mx-2">8.7/10 </span></p> 
               </div>
-              <!-- <div class="col card-btn-cup">
-                <a href="" class="btn btn-default ">View </a>
-              </div> -->
+              <div class="col-sm-4 card-btn-cup">
+                <a href="" class="btn btn-default  ">View </a>
+              </div>
             </div>
           </div>
         </div>
         <div class="col-sm-3 mb-5">
           <div class="card">
-            <img src="assets/images/action_row/Action_09.jpeg" class="card-img-top " alt="...">
+            <img src="assets/images/action_row/m_00009.jpeg" class="card-img-top " alt="...">
             <div class="card-body d-flex">
-              <div class="col">
+              <div class="col-sm-8">
                 <h6 class="card-title ">Mission Impossible:Fallout</h6>
                 <p class="card-text">
                   <i class="bi bi-star-fill"></i> 
@@ -255,17 +283,17 @@
                   <i class="bi bi-star-half"></i> 
                   <span class="mx-2">8.7/10 </span></p> 
               </div>
-              <!-- <div class="col card-btn-cup">
-                <a href="" class="btn btn-default ">View </a>
-              </div> -->
+              <div class="col-sm-4 card-btn-cup">
+                <a href="" class="btn btn-default  ">View </a>
+              </div>
             </div>
           </div>
         </div>
         <div class="col-sm-3 mb-5">
           <div class="card">
-            <img src="assets/images/action_row/Action_10.jpeg" class="card-img-top" alt="...">
+            <img src="assets/images/action_row/m_00010.jpeg" class="card-img-top" alt="...">
             <div class="card-body d-flex">
-              <div class="col">
+              <div class="col-sm-8">
                 <h6 class="card-title ">Kingsman: The Secret Service</h6>
                 <p class="card-text">
                   <i class="bi bi-star-fill"></i> 
@@ -273,9 +301,9 @@
                   <i class="bi bi-star-half"></i>
                   <span class="mx-2">8.7/10 </span></p> 
               </div>
-              <!-- <div class="col card-btn-cup">
-                <a href="" class="btn btn-default ">View </a>
-              </div> -->
+              <div class="col-sm-4 card-btn-cup">
+                <a href="" class="btn btn-default  ">View </a>
+              </div>
             </div>
           </div>
         </div>
@@ -313,25 +341,20 @@
                             </div>
                             <ul>
                                 <li><a href="#">Home</a></li>
-                                <li><a href="#">about</a></li>
-                                <li><a href="#">services</a></li>
-                                <li><a href="#">portfolio</a></li>
+                                <li><a href="#">Details </a></li>
+                                <li><a href="#">Related Movies</a></li>
+                                <li><a href="#">Trendy Movies & Series</a></li>
                                 <li><a href="#">Contact</a></li>
-                                <li><a href="#">About us</a></li>
-                                <li><a href="#">Our Services</a></li>
-                                <li><a href="#">Expert Team</a></li>
-                                <li><a href="#">Contact us</a></li>
-                                <li><a href="#">Latest News</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
                         <div class="footer-widget">
                             <div class="footer-widget-heading">
-                                <h3>Subscribe</h3>
+                                <h3>Mail Us Here: </h3>
                             </div>
                             <div class="footer-text mb-25">
-                                <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+                                <p>Feel free to ask what you need, kindly fill the form below.</p>
                             </div>
                             <div class="subscribe-form">
                                 <form action="#">
@@ -344,17 +367,16 @@
                     <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
                         <div class="footer-widget">
                           <div class="footer-widget-heading">
-                            <h3>About POPcom</h3>
+                            <h3>About POP<span>com<span></h3>
                           </div>
                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint a veniam earum, 
-                              corrupti ab reprehenderit hic. Doloribus optio, blanditiis maiores cupiditate 
                               nisi quas facere corporis?</p>
-                          <ul class="footer-social list-inline" id="social-icons">
-                              <li><a href="#"><i class="bi bi-facebook"></i></a></li>
-                              <li><a href="#"><i class="bi bi-twitter"></i></a></li>
-                              <li><a href="#"><i class="bi bi-whatsapp"></i></a></li>
-                              <li><a href="#"><i class="bi bi-instagram"></i></a></li>
-                              <li><a href="#"><i class="bi bi-youtube"></i></a></li>
+                          <ul class="footer-social list-inline text-center" id="social-icons">
+                              <li class="m-1 "><a href="#"><i class="bi bi-facebook"></i></a></li>
+                              <li class="m-1"><a href="#"><i class="bi bi-twitter"></i></a></li>
+                              <li class="m-1"><a href="#"><i class="bi bi-whatsapp"></i></a></li>
+                              <li class="m-1"><a href="#"><i class="bi bi-instagram"></i></a></li>
+                              <li class="m-1"><a href="#"><i class="bi bi-youtube"></i></a></li>
                           </ul>
                         </div>
                     </div>
@@ -364,22 +386,12 @@
         <div class="copyright-area">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                    <div class="col-xl-12 col-lg-12 text-center text-lg-left">
                         <div class="copyright-text">
                             <p>Copyright &copy; 2022, All Right Reserved <a href="#"><span>POP</span>com</a></p>
                         </div>
                     </div>
-                    <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
-                        <div class="footer-menu">
-                            <ul>
-                                <li><a href="#">HOME</a></li>
-                                <li><a href="#">Actions</a></li>
-                                <li><a href="#">Animation</a></li>
-                                <li><a href="#">International Series</a></li>
-                                <li><a href="#">Instructions</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>

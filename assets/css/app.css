@@ -498,6 +498,9 @@ a.movie-item:hover {
     text-align: center;
     /* padding: 10px; */
 }
+.card-text{
+    margin-bottom: 5px;
+}
 .movie-name {
     color: var(--text-color);
     font-family: "Mont";
@@ -527,6 +530,7 @@ a.movie-item:hover {
 /* genre section */
 .section {
     padding-top: 80px;
+    margin-bottom: 10px;
 }
 .section-header span{
     font-size: 12px;
@@ -544,21 +548,8 @@ a.movie-item:hover {
     /* align-items: center; */
     text-align: center;
 }
-.section-header{
-    animation: glitch 1s linear infinite;
-}
-  
-@keyframes glitch{
-    2%,64%{
-      transform: translate(2px,0) skew(0deg);
-    }
-    4%,60%{
-      transform: translate(-2px,0) skew(0deg);
-    }
-    62%{
-      transform: translate(0,0) skew(5deg); 
-    }
-}
+
+
 .section-header:before,
 .section-header:after{
     content: attr(title);
@@ -695,6 +686,18 @@ a.movie-item:hover {
         width: 150px;
         padding: 2px;
     }
+    .col-xl-4,.info{
+        display: block;
+        width: 100%;
+        margin: 10px;
+    }
+}
+@media (max-width: 400px){
+    .col-xl-4,.info{
+        display: block;
+        width: 100%;
+        margin: 10px;
+    }
 }
 /* movie item animation */
 
@@ -800,7 +803,6 @@ a.movie-item:hover {
 }
 .footer-widget ul li {
     display: inline-block;
-    float: left;
     width: 50%;
     margin-bottom: 12px;
 }
@@ -861,11 +863,19 @@ a.movie-item:hover {
     font-size: 14px;
     color: #878787;
 }
+.footer-social li{
+    margin-top: 10px;
+}
+.footer-social i{
+    font-size: 1.5rem;
+}
+/* End footer */
 .seemore{
     margin-top: 30px;
     /* align-items: center; */
     text-align: center;
     float: right;
+    /* margin-bottom: 30px; */
 }
 .glow-on-hover {
     width: 220px;

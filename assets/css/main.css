@@ -138,6 +138,7 @@ a {
     font-family: "Mont";
     font-weight: 700;
     letter-spacing: 1px;
+    text-transform: uppercase;
 }
 hr {
     border:none;
@@ -171,20 +172,21 @@ hr {
     font-size: 14px;
 }
 .facts_info{
-    margin-left: 80px;
+    margin: 0 auto;
+    align-items: center;
 }
-.facts_info h6{
+.facts_info h5{
     font-family: "Bebas Neue";
     font-weight: 300;
-    text-align: left;
+    text-align: center   ;
     letter-spacing: 2px;
     color: var(--main-color);
+    /* font-size: 20px; */
 }
 .facts_info i  {
     font-size: 18px;
     color: var(--main-color);
     margin-right: 5px!important;
-    float: left;
 }
 .facts_info span{
     font-size: 16px;
@@ -209,6 +211,7 @@ hr {
 }
 #moreText{
     display: none;
+    text-align: left!important;
 }
 #textButton{
     border: 1px solid var(--text-color);
@@ -266,7 +269,7 @@ hr {
     box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
     outline: none;
     transition: all 0.3s;
-    filter:brightness(400%);
+    /* filter:brightness(0.5); */
 }
 .trailer.show{
     pointer-events: all;
@@ -281,35 +284,7 @@ hr {
         max-width: 90%;
     }
 }
-/* .close{
-    position: absolute;
-    top: 10%;
-    right: 25px;
-    color: #fff;
-    font-size: 42px;
-    cursor: pointer;
-}
-.hidden {
-    display: none;
-} */
-/* End one */
-/* start Two */
 
-/* .single-img{
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column-reverse;
-    flex-wrap: nowrap;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-    box-shadow: 5px 5px 20px rgba(0,0,0,0.3);
-    transform: translate(0, 0);
-    transition: .3s;
-}
-.single-img:hover{
-    transform: translate(0, -9px);
-} */
 
 .vl{
     border-left: 6px solid var(--main-color);
@@ -361,6 +336,17 @@ hr {
     font-size: 15px;
     color: var(--main-color);
 }
+.card:hover{
+    box-shadow: 4px 4px 4px rgba(3, 3, 3, 0.514);
+    -webkit-transform: translate(0, -8px);
+    -moz-transform: translate(0, -8px);
+    -ms-transform: translate(0, -8px);
+    -o-transform: translate(0, -8px);
+    transform: translate(0, -8px);
+    box-shadow: 0 40px 40px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+
 /* End Two */
 /* footer */
 .footer-section {
@@ -398,11 +384,24 @@ hr {
 }
 
 .footer-widget-heading h3 {
-    color: #fff;
+    color: var(--main-color);
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 40px;
     position: relative;
+}
+.footer-widget-heading span{
+    color: var(--hover-color);
+}
+.footer-social li{
+    border: 1px solid var(--main-color);
+    padding: 2px;
+    align-items: center;
+    /* text-align: center; */
+    border-radius: 10px;
+}
+.footer-social i{
+    float: center;
 }
 .footer-widget-heading h3::before {
     content: "";
@@ -413,11 +412,8 @@ hr {
     width: 50px;
     background: var(--main-color);
 }
-.footer-widget ul li {
-    display: inline-block;
-    float: left;
-    width: 50%;
-    margin-bottom: 12px;
+.footer-widget ul  li a{
+    text-decoration: none!important;
 }
 .footer-widget ul li a:hover{
     color: var(--hover-color);
@@ -540,6 +536,14 @@ hr {
     .card-img-top{
         height: 300px!important;
     }
+    /* .watch_btn_div{
+        margin-bottom: 30rem!important;
+    }
+    #two{
+        margin-top:  30rem!important;
+        align-items: center;
+        margin-left: 50px;
+    } */
    
 }
 @media (max-width: 991px){
@@ -547,7 +551,7 @@ hr {
         margin-bottom: 35px;
     }
     #two{
-        margin-top:  350px!important;
+        /* margin-top:  350px!important; */
         align-items: center;
         margin-left: 50px;
     }
@@ -556,6 +560,19 @@ hr {
     }
     .footer-section{
         margin-left: 50px;
+    }
+    .watch_btn_div{
+        margin-bottom: 200px!important;
+    }
+}
+@media (max-width: 550px){
+    .watch_btn_div{
+        margin-bottom: 200px!important;
+    }
+    #two{
+        margin-top:  300px!important;
+        align-items: center;
+        margin-left: 80px;
     }
 }
 @media (max-width: 400px){
@@ -568,7 +585,7 @@ hr {
         margin-left: 30px;
     }
     #two{
-        margin-top:  600px!important;
+        margin-top:  500px!important;
         align-items: center;
         margin-left: 80px;
     }
@@ -593,6 +610,9 @@ hr {
     .footer-section{
         margin-left: 80px;
         padding: 10px!important;
+    }
+    .watch_btn_div{
+        margin-bottom: 300px!important;
     }
 
 }
