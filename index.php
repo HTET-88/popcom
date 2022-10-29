@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>POPCOM - Have Fun Here! </title>
 
-    <!-- Start style -->
-        <?php include('includes/style.php') ?>
-    <!-- End  -->
+    <!-- bod -->
+    <link rel="stylesheet" href="assets/css/boxicons.min.css">
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <!-- custom style -->
+    <link rel="stylesheet" href="/assets/css/ani.css">
+    <link rel="stylesheet" href="assets/css/grid.css">
+    <link rel="stylesheet" href="assets/css/app.css">
 </head>
 <body>
 
@@ -165,20 +170,46 @@
             </div>
             <div class="movies-slide carousel-nav-center owl-carousel">
                 <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item">
-                    <img src="./assets/images/action_row/Action_01.jpg" alt="">
-                    <div class="movie_title">
-                        <h1>Sample Text</h1>
+                <div>
+                    <a href="#" class="movie-item">
+                        <img src="./assets/images/action_row/Action_01.jpg" alt="">
+                        <div class="movie_title">
+                            <button class="btn " onclick="location.href='movie_details.php';">VIEW</button>
+                        </div>
+                    </a>
+                    <div class="movie_body ">
+                        <h4 class="movie-name ">SKYSCRAPER</h4>
+                        <p class="card-text">
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i>      
+                            <i class="bi bi-star-half"></i> 
+                            <span class="mx-2">8.7/10 </span>
+                        </p> 
                     </div>
-                </a>
+                </div>
                 <!-- END MOVIE ITEM -->
                 <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item">
-                    <img src="./assets/images/action_row/Action_02.jpeg" alt="">
-                    <div class="movie_title">
-                        <h1>Sample Text</h1>
+                <div>
+                    <a href="#" class="movie-item">
+                        <img src="./assets/images/action_row/Action_01.jpg" alt="">
+                        <div class="movie_title">
+                            <button class="btn " onclick="location.href='movie_details.php';">VIEW</button>
+                        </div>
+                    </a>
+                    <div class="movie_body ">
+                        <h4 class="movie-name ">SKYSCRAPER</h4>
+                        <p class="card-text">
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i>      
+                            <i class="bi bi-star-half"></i> 
+                            <span class="mx-2">8.7/10 </span>
+                        </p> 
                     </div>
-                </a>
+                </div>
                 <!-- END MOVIE ITEM -->
                 <!-- MOVIE ITEM -->
                 <a href="#" class="movie-item">
@@ -238,20 +269,46 @@
             </div>
             <div class="movies-slide carousel-nav-center owl-carousel">
                 <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item">
-                    <img src="./assets/images/action_row/Action_01.jpg" alt="">
-                    <div class="movie_title">
-                        <h1>Sample Text</h1>
+                <div>
+                    <a href="#" class="movie-item">
+                        <img src="./assets/images/action_row/Action_01.jpg" alt="">
+                        <div class="movie_title">
+                            <button class="btn " onclick="location.href='movie_details.php';">VIEW</button>
+                        </div>
+                    </a>
+                    <div class="movie_body ">
+                        <h4 class="movie-name ">SKYSCRAPER</h4>
+                        <p class="card-text">
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i>      
+                            <i class="bi bi-star-half"></i> 
+                            <span class="mx-2">8.7/10 </span>
+                        </p> 
                     </div>
-                </a>
+                </div>
                 <!-- END MOVIE ITEM -->
                 <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item">
-                    <img src="./assets/images/action_row/Action_02.jpeg" alt="">
-                    <div class="movie_title">
-                        <h1>Sample Text</h1>
+                <div>
+                    <a href="#" class="movie-item">
+                        <img src="./assets/images/action_row/Action_01.jpg" alt="">
+                        <div class="movie_title">
+                            <button class="btn " onclick="location.href='movie_details.php';">VIEW</button>
+                        </div>
+                    </a>
+                    <div class="movie_body ">
+                        <h4 class="movie-name ">SKYSCRAPER</h4>
+                        <p class="card-text">
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i>      
+                            <i class="bi bi-star-half"></i> 
+                            <span class="mx-2">8.7/10 </span>
+                        </p> 
                     </div>
-                </a>
+                </div>
                 <!-- END MOVIE ITEM -->
                 <!-- MOVIE ITEM -->
                 <a href="#" class="movie-item">
@@ -312,18 +369,31 @@
             </div>
             <div class="movies-slide carousel-nav-center owl-carousel">
                 <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item">
-                    <img src="./assets/images/action_row/Action_01.jpg" alt="">
-                    <div class="movie_title">
-                        <h1>Sample Text</h1>
+                <div>
+                    <a href="#" class="movie-item">
+                        <img src="./assets/images/action_row/Action_01.jpg" alt="">
+                        <div class="movie_title">
+                            <button class="btn " onclick="location.href='movie_details.php';">VIEW</button>
+                        </div>
+                    </a>
+                    <div class="movie_body ">
+                        <h4 class="movie-name ">SKYSCRAPER</h4>
+                        <p class="card-text">
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i> 
+                            <i class="bi bi-star-fill"></i>      
+                            <i class="bi bi-star-half"></i> 
+                            <span class="mx-2">8.7/10 </span>
+                        </p> 
                     </div>
-                </a>
+                </div>
                 <!-- END MOVIE ITEM -->
                 <!-- MOVIE ITEM -->
                 <a href="#" class="movie-item">
                     <img src="./assets/images/action_row/Action_02.jpeg" alt="">
                     <div class="movie_title">
-                        <h1>Sample Text</h1>
+                        <button class="btn" onclick="location.href='https://google.com';">VIEW</button>
                     </div>
                 </a>
                 <!-- END MOVIE ITEM -->
@@ -478,9 +548,16 @@
     </footer>
     <!-- End Footer -->
     
-    <!-- Start Script -->
-        <?php include('includes/script.php') ?>
-    <!-- End Script -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.6.1.min.js"></script>
+    <!-- bootstrap  -->
+    <!-- <script src="assets/js/bootstrap.bundle.min.js"></script> -->
+    <!-- aos animation -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- owl carousel -->
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <!-- custom js -->
+    <script src="assets/js/app.js"></script>
     <script>
         AOS.init();
     </script>

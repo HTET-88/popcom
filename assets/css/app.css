@@ -490,6 +490,32 @@ a.movie-item:hover {
     padding-top: 140%;
     cursor: pointer;
 }
+.movie_body{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    /* height: 70px; */
+    text-align: center;
+    /* padding: 10px; */
+}
+.movie-name {
+    color: var(--text-color);
+    font-family: "Mont";
+    font-weight: 700;
+    /* margin-top: 5px; */
+    /* margin-bottom: 10px; */
+    padding-top: 10px;
+    letter-spacing: 1px;
+}
+.movie_body i{
+    color: var(--main-color);
+    font-size: 10px!important;
+}
+.movie_body span{
+    color: var(--hover-color);
+    font-family: "Bebas Neue";
+    /* margin-left: 5px; */
+}
 
 .movie-item img {
     position: absolute;
@@ -678,28 +704,43 @@ a.movie-item:hover {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.594);
     overflow: hidden;
     width: 100%;
     height: 0;
     transition: .5s ease;
     text-align: center;
     margin: 0 auto;
+    align-items: center;
 }
 .movie-item:hover .movie_title{
     height: 100%;
 }
 
-.movie_title h1{
+/* .movie_title h1{
     font-size: 2vw;
     position: absolute;
     text-align: center;
     font-family: "Sora";
     margin-top: 50%;
     margin-left: 10%;
-    /* transform: rotate(-5deg)skewX(-5deg); */
+    transform: rotate(-5deg)skewX(-5deg);
+} */
+.movie_title button{
+    font-family: "Bebas Neue";
+    margin: 0 auto;
+    top: 45%;
+    letter-spacing: 1.5px;
+    background-color: black;
+    border:2px solid var(--hover-color);
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px 10px;
+    /* font-size: 30px; */
 }
-
+.movie_title button:hover{
+    background-color: var(--hover-color)
+}
 .row{
     align-items: center;
     display: flex;
